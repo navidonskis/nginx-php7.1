@@ -31,7 +31,8 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && \
 		supervisor \
 		nginx \
 		memcached \
-		ssmtp && \
+		ssmtp \
+		cron && \
 
 	# Install PHP
 	apt-get install -y php7.1-fpm \
