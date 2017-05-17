@@ -64,7 +64,9 @@ RUN apt-get remove --purge -y software-properties-common \
 	python-software-properties && \
 	apt-get autoremove -y && \
 	apt-get clean && \
-	apt-get autoclean
+	apt-get autoclean && \
+	# install composer
+	curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 # Nginx configuration
 RUN sed -i -e"s/worker_processes  1/worker_processes 5/" /etc/nginx/nginx.conf && \
